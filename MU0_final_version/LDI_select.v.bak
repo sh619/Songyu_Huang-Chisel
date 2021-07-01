@@ -1,0 +1,10 @@
+module LDI_select
+(
+output [3:0] LDI_acc,
+input [3:0] acc,
+input LDI _en
+)
+
+assign LDI_acc=0000;
+
+endmodule
