@@ -11,6 +11,9 @@ In order to run the MU0 design on FPGA, I need to change the current Quartus fil
 ![image](https://user-images.githubusercontent.com/59866887/126938739-4815c741-feed-448c-a997-710c2fb807d2.png)  
 - The detailed block diagram version with all the individual modules are shown below(top level design on Quartus):  
 ![image](https://user-images.githubusercontent.com/59866887/126939010-83d284b1-9fda-4c96-a3f3-74bcb8cad541.png)
+- With the following instructions:
+![image](https://user-images.githubusercontent.com/59866887/126984500-08d65ecf-f881-4501-a19f-6d56afabd827.png)
+
 
 ### Implement MU0 using Chisel:
 #### Chisel Environment set up:
@@ -162,7 +165,12 @@ endmodule
 ```
 
 ##### RAM
-Chisel supports RAM configuration in the Chisel3.uitl package
+Chisel supports RAM configuration in the Chisel3.uitl package. This is a single port RAM.  
+We also need to initialize the memory of the RAM to insert the assemblly code.  
+> Chisel memories can be initialized from an external binary or hex file emitting proper Verilog for synthesis or simulation. There are multiple modes of initialization.  
+There is a function in the experimental package, it can read txt file and initialized in RAM.  
+> def apply[T <: Data](memory: MemBase[T], fileName: String, hexOrBinary: FileType = MemoryLoadFileType.Hex): Unit  
+This is just calling “$readmemh” and “$readmemb” in verilog, we need to follow verilog syntax when using this function.
 ```
 package test
  
@@ -255,6 +263,7 @@ Done elaborating.
 [error]         at 
 [success] Total time: 4 s, completed Jul 26, 2021 7:35:52 PM
 ```
+Based on:  
 > https://www.chisel-lang.org/
 
 
