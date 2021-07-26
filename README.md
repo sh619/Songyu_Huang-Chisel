@@ -1,5 +1,5 @@
 # Chisel Project 
-This project is for myself to learn Chisel languge and hopefully finish some solid CPU design.  
+This project is for myself to learn Chisel language and hopefully finish some solid CPU design.  
 
 ## Implement MU0 CPU using Chisel
 ### Initial reaserch and FPGA set up:  
