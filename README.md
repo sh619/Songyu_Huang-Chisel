@@ -14,10 +14,9 @@ In order to run the MU0 design on FPGA, I need to change the current Quartus fil
 
 ### Implement MU0 using Chisel:
 #### Chisel Environment set up:
-The chisel enviroment set up was finished based on the tutorial > https://blog.csdn.net/qq_34291505/article/details/86744581, this is a detailed tutorial starts from learning scala to familiarize Chisel3. I am using Ubuntu 18.04.
+The chisel enviroment set up was finished based on the tutorial https://blog.csdn.net/qq_34291505/article/details/86744581, this is a detailed tutorial starts from learning scala to familiarize Chisel3. I am using Ubuntu 18.04.
 The following reports should appear after running "sbt test"  
 ```
-@requires_authorization
 [info] welcome to sbt 1.4.9 (Private Build Java 1.8.0_292)
 [info] loading settings for project chisel-template-build from plugins.sbt ...
 [info] loading project definition from /home/songyu/Documents/Chisel_project/Songyu_Huang-Chisel/Chisel_MU0/chisel-template/project
@@ -32,14 +31,14 @@ Done elaborating.
 [info] All tests passed.
 [success] Total time: 7 s, completed Jul 26, 2021 5:21:12 PM
 ```  
-This means that Chisel has set up successfully on the Computer  
+This means that Chisel has set up successfully.
 ##### Simulation and Generating Verilog
 I am using Vistual studio code as the text editor because it has Chisel syntax extention: 
 ![image](https://user-images.githubusercontent.com/59866887/126974995-2538c7c2-c795-4b60-9146-1230937c940c.png)  
 Inserting the generated verilog file to Quartus and run Modelsim testbench is a good way to debug on the design, this is faster than writting testbench and runs using Verilator in my opinion.
 
 
-#### Individual module construction of MU0 (not all the module is listed), all modules were tested using modelsim
+#### Individual module construction of MU0 (not all the module is listed), all modules were tested using modelsim on Quartus
 The block digram of the circuit is shown below
 ##### Finite StateMachine
 ![image](https://user-images.githubusercontent.com/59866887/126973655-1616380d-b80b-4e8e-b173-004dac4a05f7.png)  
@@ -256,7 +255,7 @@ Done elaborating.
 [error]         at 
 [success] Total time: 4 s, completed Jul 26, 2021 7:35:52 PM
 ```
-
+> https://www.chisel-lang.org/
 
 
 
