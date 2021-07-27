@@ -81,7 +81,7 @@ switch (state) {
     }
 }
 ```  
-The generated verilog code is shown below. it is not very neat and has a lot of unnecessary parameters.
+The generated verilog code is shown below.
 ```
 module StateMachine(
   input   clock,
@@ -263,8 +263,6 @@ Done elaborating.
 [error]         at 
 [success] Total time: 4 s, completed Jul 26, 2021 7:35:52 PM
 ```
-Based on:  
-> https://www.chisel-lang.org/
 
 
 
