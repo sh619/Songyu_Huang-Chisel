@@ -1,5 +1,5 @@
 # Update：
-7.27 —— 8.1 Complete challenge using chisel
+7.27 —— 8.1 Complete the f1 LED challenge using chisel
 # Description
 The goal in this Challenge is to design a Formula 1 style of race starting lights.  
 The link below is to a YouTube video on a similar light with sound. (Sound is not required for this Challenge.  
