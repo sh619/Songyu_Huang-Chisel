@@ -12,7 +12,7 @@ The specification of the circuit is:
 3. The circuit then waits for a random period of time between 0.25 and 16 seconds before all LEDs turn OFF;  
 4. You should also display the random delay period in milliseconds on five 7-segment displays.
 5. The circuit should count the time between all the LEDs turning OFF and you pressing KEY[0]. The reaction time should be displayed on the 7-segment displays in milliseconds in place of the random delay   
-## Errors when tring to finish the design
+## Errors encountered during the design
 I tried to use >  chisel3.Driver.execute(args, () => new ) to run the design at first, However, sometimes it cannot generate verilog and does not produce the correct error description.
 ``` 
 [info] welcome to sbt 1.4.9 (Private Build Java 1.8.0_292)
@@ -32,6 +32,8 @@ object CPU_Gen extends App {
 ``` 
 The "emitverilog" is better than the old version of the instuction. Then it produced the error below:
 ```
-
+[error] (run-main-0) firrtl.transforms.CheckCombLoops$CombLoopException: : [module FSM] Combinational loop detected:
+```
+After searching online, I found 
 
 
