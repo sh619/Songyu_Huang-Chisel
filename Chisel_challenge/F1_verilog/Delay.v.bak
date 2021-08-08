@@ -1,0 +1,24 @@
+module delay(N,clk,trigger,time_out)
+
+input N;
+input clk;
+input trigger;
+output time_out;
+reg state;
+initial state=1'b0;
+
+always @(posedge clk)
+		case(state)
+		1'b0:
+			if(trigger==1)
+			state <= 1'b1;
+			else
+			state <= 1'b0;
+		1'b1:
+			N <=N-1;
+			if(N==0)
+			assign time_out=1;
+			state <= 1'b0;
+			else state <= 1'b1;
+		endcase
+endmodule

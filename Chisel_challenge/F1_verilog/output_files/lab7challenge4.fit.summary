@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun Aug 08 12:05:40 2021
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Revision Name : lab7challenge4
+Top-level Entity Name : lab7challenge4
+Family : Cyclone 10 LP
+Device : 10CL016YU256C8G
+Timing Models : Final
+Total logic elements : 355 / 15,408 ( 2 % )
+    Total combinational functions : 333 / 15,408 ( 2 % )
+    Dedicated logic registers : 138 / 15,408 ( < 1 % )
+Total registers : 138
+Total pins : 22 / 163 ( 13 % )
+Total virtual pins : 0
+Total memory bits : 0 / 516,096 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 112 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

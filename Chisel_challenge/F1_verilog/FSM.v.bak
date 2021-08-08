@@ -1,0 +1,87 @@
+module FSM(clk,tick,trigger,time_out,en_lfsr,start_delay,ledr);
+
+
+input clk;
+input tick;
+input trigger;
+input time_out;
+output [9:0] ledr;
+output en_lfsr;
+output start_delay;
+
+reg state;
+
+initial state=4'b0;
+
+always @(posedge clk)
+     case (state)
+		4'b0000:
+			if(trigger===1)
+			state <= 4'b0001;
+		4'b0001:
+			if(tick==1)
+			ledr[0]=1;
+			state <= 4'b0010;
+			else 
+			state <= 4'b0001;
+		4'b0010:
+			if(tick==1)
+			ledr[1:0]=1;
+			state <= 4'b0011;
+			else 
+			state <= 4'b0010;
+		4'b0011:
+			if(tick==1)
+			ledr[2:0]=1;
+			state <= 4'b0100;
+			else 
+			state <= 4'b0011;
+		4'b0100:
+			if(tick==1)
+			ledr[3:0]=1;
+			state <= 4'b0101;
+			else 
+			state <= 4'b0100;
+		4'b0101:
+			if(tick==1)
+			ledr[4:0]=1;
+			state <= 4'b0110;
+			else 
+			state <= 4'b0101;
+		4'b0110:
+			if(tick==1)
+			ledr[5:0]=1;
+			state <= 4'b0111;
+			else 
+			state <= 4'b0110;
+		4'b0111:
+			if(tick==1)
+			ledr[6:0]=1;
+			state <= 4'b1000;
+			else 
+			state <= 4'b0111;
+		4'b1000:
+			if(tick==1)
+			ledr[7:0]=1;
+			state <= 4'b1001;
+			else 
+			state <= 4'b1000;
+		4'b1001:
+			if(tick==1)
+			ledr[8:0]=1;
+			state <= 4'b1010;
+			else 
+			state <= 4'b1001;
+		4'b1010:
+			ledr[9:0]=1;
+		  assign	 en_lfsr=1;
+		  assign  start_delay=1;
+		  if(time_out==1)
+		  state <= 4'b0000;
+		  else 
+		  state <= 4'b1010;
+		endcase
+		  		
+			
+			
+			

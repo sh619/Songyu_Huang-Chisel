@@ -1,0 +1,14 @@
+module lab7challenge4(MAX10_CLK1_50,KEY,HEX0,HEX1,HEX2,HEX3,HEX4,LEDR)
+
+input MAX10_CLk1_50;
+input [1:0] KEY;
+output [6:0] HEX0,HEX1,HEX2,HEX3,HEX4;
+wire tick_ms;
+wire tick_halfs;
+wire time_out;
+wire en_lfsr;
+wire start_delay;
+wire ren;
+wire [3:0] BCD0,BCD1,BCD2,BCD3,BCD4;
+
+clktick ms(

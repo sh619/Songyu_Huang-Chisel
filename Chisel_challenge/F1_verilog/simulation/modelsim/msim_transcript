@@ -1,0 +1,96 @@
+# Reading C:/intelFPGA/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# Load canceled
+# do lab7challenge4_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/huang/OneDrive\ -\ Imperial\ College\ London/circuit\ and\ system/FPGA\ lab\ bakup/E2_circuit_system/mylib/bin2bcd_16.v {C:/Users/huang/OneDrive - Imperial College London/circuit and system/FPGA lab bakup/E2_circuit_system/mylib/bin2bcd_16.v/bin2bcd_16.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:31:12 on Dec 09,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/huang/OneDrive - Imperial College London/circuit and system/FPGA lab bakup/E2_circuit_system/mylib/bin2bcd_16.v" C:/Users/huang/OneDrive - Imperial College London/circuit and system/FPGA lab bakup/E2_circuit_system/mylib/bin2bcd_16.v/bin2bcd_16.v 
+# -- Compiling module bin2bcd_16
+# 
+# Top level modules:
+# 	bin2bcd_16
+# End time: 20:31:12 on Dec 09,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/huang/OneDrive\ -\ Imperial\ College\ London/circuit\ and\ system/FPGA\ lab\ bakup/E2_circuit_system/mylib {C:/Users/huang/OneDrive - Imperial College London/circuit and system/FPGA lab bakup/E2_circuit_system/mylib/hex_to_7seg.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:31:12 on Dec 09,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/huang/OneDrive - Imperial College London/circuit and system/FPGA lab bakup/E2_circuit_system/mylib" C:/Users/huang/OneDrive - Imperial College London/circuit and system/FPGA lab bakup/E2_circuit_system/mylib/hex_to_7seg.v 
+# -- Compiling module hex_to_7seg
+# 
+# Top level modules:
+# 	hex_to_7seg
+# End time: 20:31:12 on Dec 09,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/huang/OneDrive\ -\ Imperial\ College\ London/circuit\ and\ system/FPGA\ lab\ bakup/E2_circuit_system/mylib {C:/Users/huang/OneDrive - Imperial College London/circuit and system/FPGA lab bakup/E2_circuit_system/mylib/clktick.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:31:12 on Dec 09,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/huang/OneDrive - Imperial College London/circuit and system/FPGA lab bakup/E2_circuit_system/mylib" C:/Users/huang/OneDrive - Imperial College London/circuit and system/FPGA lab bakup/E2_circuit_system/mylib/clktick.v 
+# -- Compiling module clktick
+# 
+# Top level modules:
+# 	clktick
+# End time: 20:31:13 on Dec 09,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/huang/OneDrive\ -\ Imperial\ College\ London/circuit\ and\ system/FPGA\ lab\ bakup/E2_circuit_system/lab7/challenge\ 4 {C:/Users/huang/OneDrive - Imperial College London/circuit and system/FPGA lab bakup/E2_circuit_system/lab7/challenge 4/FSM.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:31:13 on Dec 09,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/huang/OneDrive - Imperial College London/circuit and system/FPGA lab bakup/E2_circuit_system/lab7/challenge 4" C:/Users/huang/OneDrive - Imperial College London/circuit and system/FPGA lab bakup/E2_circuit_system/lab7/challenge 4/FSM.v 
+# -- Compiling module FSM
+# 
+# Top level modules:
+# 	FSM
+# End time: 20:31:13 on Dec 09,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/huang/OneDrive\ -\ Imperial\ College\ London/circuit\ and\ system/FPGA\ lab\ bakup/E2_circuit_system/lab7/challenge\ 4 {C:/Users/huang/OneDrive - Imperial College London/circuit and system/FPGA lab bakup/E2_circuit_system/lab7/challenge 4/Delay.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:31:13 on Dec 09,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/huang/OneDrive - Imperial College London/circuit and system/FPGA lab bakup/E2_circuit_system/lab7/challenge 4" C:/Users/huang/OneDrive - Imperial College London/circuit and system/FPGA lab bakup/E2_circuit_system/lab7/challenge 4/Delay.v 
+# -- Compiling module delay
+# ** Error: C:/Users/huang/OneDrive - Imperial College London/circuit and system/FPGA lab bakup/E2_circuit_system/lab7/challenge 4/Delay.v(5): (vlog-2730) Undefined variable: 'N_BIT'.
+# ** Error: C:/Users/huang/OneDrive - Imperial College London/circuit and system/FPGA lab bakup/E2_circuit_system/lab7/challenge 4/Delay.v(11): 'N_BIT' already declared in this scope.
+# ** Error: C:/Users/huang/OneDrive - Imperial College London/circuit and system/FPGA lab bakup/E2_circuit_system/lab7/challenge 4/Delay.v(1): Identifier must be declared with a port mode: N.
+# End time: 20:31:13 on Dec 09,2020, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# ** Error: C:/intelFPGA/18.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./lab7challenge4_run_msim_rtl_verilog.do line 12
+# C:/intelFPGA/18.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -vlog01compat -work work +incdir+C:/Users/huang/OneDrive\ -\ Imperial\ College\ London/circuit\ and\ system/FPGA\ lab\ bakup/E2_circuit_system/la..."
+vsim -gui -l msim_transcript work.clktick
+# vsim -gui -l msim_transcript work.clktick 
+# Start time: 20:31:38 on Dec 09,2020
+# Loading work.clktick
+add wave tick enable
+add wave clkin
+run 100ns
+vsim -gui -l msim_transcript work.FSM
+# End time: 20:35:17 on Dec 09,2020, Elapsed time: 0:03:39
+# Errors: 0, Warnings: 0
+# vsim -gui -l msim_transcript work.FSM 
+# Start time: 20:35:17 on Dec 09,2020
+# Loading work.FSM
+add wave tick clk
+run 1s
+# Invalid time value: 1s
+run 100000000000ns
+run 1000ms
+force clk 0  0 ,1 1ms -repeat 1000ms
+force clk 0  0 ,1 1ms -repeat 2ms
+run 1000ms
+force clk 0  0 ,1 1ms -repeat 2ms
+run 100ms
+force -freeze sim:/FSM/clk St0 0
+force clk 0  0 ,1 1ms -repeat 2ms
+force clk 0  0 ,1 1ms -repeat 2ms
+# End time: 20:47:27 on Dec 09,2020, Elapsed time: 0:12:10
+# Errors: 1, Warnings: 0
