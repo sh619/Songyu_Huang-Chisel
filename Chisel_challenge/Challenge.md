@@ -117,6 +117,7 @@ module scan_led_hex_disp(
  end
 endmodule
 ```
+The LEDs on this FPGA board is active high and the seven segment displays is active low, therefore code has been changed accordingly.
 
 
 
