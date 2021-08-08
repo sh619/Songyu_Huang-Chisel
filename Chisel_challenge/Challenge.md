@@ -44,7 +44,7 @@ The new FPGA is STEP-CYC10:
 ![image](https://user-images.githubusercontent.com/59866887/128619895-24151c0a-f2c8-47d0-a158-cb1a7c4828f0.png)
 It has a different pin assignment, therefore I need to locate the pin using the table below:
 ![image](https://user-images.githubusercontent.com/59866887/128619929-ee8a7338-f50d-4289-8308-eec31d217f48.png)
-The 7 segment display has different pin allocation, it has a digit pin and a segment pin. In order to make sure the four 7 segment displays can represent different digit of a hex number, the following code is used:
+The 7 segment display has different pin allocation, it has a digit pin and a segment pin. In order to make sure the four 7 segment displays can represent different digit of a hex number, the following code is used(it does not have 7 pins for each of the display, therefore, in order to make the display show different number at the same time, we need to make sure the 7segment display flash quick enough to "trick" our eyes:
 ```
 `timescale 1ns / 1ps 
 module scan_led_hex_disp(
