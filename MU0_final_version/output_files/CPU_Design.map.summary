@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Aug 13 00:45:39 2021
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Revision Name : CPU_Design
+Top-level Entity Name : CPU_Design
+Family : Cyclone 10 LP
+Total logic elements : 367
+    Total combinational functions : 351
+    Dedicated logic registers : 95
+Total registers : 95
+Total pins : 13
+Total virtual pins : 0
+Total memory bits : 65,536
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
