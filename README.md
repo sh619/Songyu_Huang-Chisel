@@ -14,7 +14,7 @@ In order to run the MU0 design on FPGA, I need to change the current Quartus fil
 - With the following instructions:
 ![image](https://user-images.githubusercontent.com/59866887/126984500-08d65ecf-f881-4501-a19f-6d56afabd827.png)
 
-### Sending instruction from PC to FPGA
+### Sending instructions from PC to FPGA
 
 ### Implement MU0 using Chisel:
 #### Chisel Environment set up:
