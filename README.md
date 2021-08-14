@@ -1,11 +1,11 @@
 # Chisel Project 
-This project is for myself to learn Chisel language and hopefully finish some solid CPU design.  
+This project is for myself to learn Chisel language and hopefully finish some solid CPU design on FPGA.  
 
 ## Implement MU0 CPU using Chisel
 ### Initial reaserch and FPGA set up:  
 I have already implemented this CPU on Quartus last year using block digram design, therefore to implmented again using Chisel will be a excellent way to start the tutorial.  
-First need to make sure that the design can run on MAX10 FPGA successfully. I am using MAX10 DE10 lite for the project.  
-In order to run the MU0 design on FPGA, I need to change the current Quartus file to the suitable version to make sure the designed CPU can run on MAX10 FPGA(I am using MAX10). When trying to connect the FPGA to Quartus vis USB blaster, Quartus cannot recognize the FPGA board. After searching online, I found out that this maybe caused by other USB devices connected to the PC(from Intel community).![image](https://user-images.githubusercontent.com/59866887/124550922-ff393580-de63-11eb-8a4a-ea62713121fc.png) This problem cause a lot of time to find the problem and fix, which makes the project slightly behind the scheduled time.  
+First need to make sure that the design can run on Cyclone10 FPGA successfully. I am using Cyclone10 for the project.  
+In order to run the MU0 design on FPGA, I need to change the current Quartus file to the suitable version to make sure the designed CPU can run on Cyclone10 FPGA. When trying to connect the FPGA to Quartus vis USB blaster, Quartus cannot recognize the FPGA board. After searching online, I found out that this maybe caused by other USB devices connected to the PC(from Intel community).![image](https://user-images.githubusercontent.com/59866887/124550922-ff393580-de63-11eb-8a4a-ea62713121fc.png) This problem cause a lot of time to find the problem and fix, which makes the project slightly behind the scheduled time.  
 
 - The logic diagrams of MU0 is shown below:  
 ![image](https://user-images.githubusercontent.com/59866887/126938739-4815c741-feed-448c-a997-710c2fb807d2.png)  
@@ -14,6 +14,7 @@ In order to run the MU0 design on FPGA, I need to change the current Quartus fil
 - With the following instructions:
 ![image](https://user-images.githubusercontent.com/59866887/126984500-08d65ecf-f881-4501-a19f-6d56afabd827.png)
 
+### Sending instruction from PC to FPGA
 
 ### Implement MU0 using Chisel:
 #### Chisel Environment set up:
