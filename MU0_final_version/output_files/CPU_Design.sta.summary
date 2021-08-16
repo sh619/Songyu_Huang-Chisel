@@ -3,19 +3,19 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clktick:inst14|tick'
-Slack : -8.739
-TNS   : -424.666
+Slack : -8.689
+TNS   : -429.280
 
 Type  : Slow 1200mV 85C Model Setup 'Clock'
-Slack : -3.719
-TNS   : -117.658
+Slack : -3.763
+TNS   : -240.611
 
 Type  : Slow 1200mV 85C Model Hold 'Clock'
-Slack : 0.447
+Slack : 0.437
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clktick:inst14|tick'
-Slack : 0.468
+Slack : 0.467
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clktick:inst14|tick'
@@ -24,22 +24,22 @@ TNS   : -145.226
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Clock'
 Slack : -3.000
-TNS   : -75.863
+TNS   : -135.343
 
 Type  : Slow 1200mV 0C Model Setup 'clktick:inst14|tick'
-Slack : -7.939
-TNS   : -386.644
+Slack : -7.974
+TNS   : -392.939
 
 Type  : Slow 1200mV 0C Model Setup 'Clock'
-Slack : -3.325
-TNS   : -102.104
+Slack : -3.441
+TNS   : -215.339
 
 Type  : Slow 1200mV 0C Model Hold 'Clock'
-Slack : 0.400
+Slack : 0.387
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clktick:inst14|tick'
-Slack : 0.418
+Slack : 0.419
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clktick:inst14|tick'
@@ -48,27 +48,27 @@ TNS   : -145.226
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Clock'
 Slack : -3.000
-TNS   : -75.863
+TNS   : -135.343
 
 Type  : Fast 1200mV 0C Model Setup 'clktick:inst14|tick'
-Slack : -3.028
-TNS   : -134.589
+Slack : -3.013
+TNS   : -135.682
 
 Type  : Fast 1200mV 0C Model Setup 'Clock'
-Slack : -0.971
-TNS   : -24.189
-
-Type  : Fast 1200mV 0C Model Hold 'clktick:inst14|tick'
-Slack : 0.175
-TNS   : 0.000
+Slack : -1.015
+TNS   : -54.968
 
 Type  : Fast 1200mV 0C Model Hold 'Clock'
-Slack : 0.187
+Slack : 0.180
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clktick:inst14|tick'
+Slack : 0.194
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Clock'
 Slack : -3.000
-TNS   : -67.102
+TNS   : -119.798
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clktick:inst14|tick'
 Slack : -1.000

@@ -255,7 +255,7 @@ q[15] <= dffs[15].DB_MAX_OUTPUT_PORT_TYPE
 shiftout <= shiftout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|CPU_Design|Decoder:inst7
+|CPU_Design|Decoder:inst10
 op[0] => STA.IN1
 op[0] => SUB.IN1
 op[0] => JMI.IN1
@@ -299,6 +299,7 @@ MI => PC_sload.IN1
 MI => cnt_en.IN1
 GE => PC_sload.IN1
 GE => cnt_en.IN1
+uart => WRen.IN1
 EXTRA <= EXTRA.DB_MAX_OUTPUT_PORT_TYPE
 WRen <= WRen.DB_MAX_OUTPUT_PORT_TYPE
 sel1 <= sel1.DB_MAX_OUTPUT_PORT_TYPE

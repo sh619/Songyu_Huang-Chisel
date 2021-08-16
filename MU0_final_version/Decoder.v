@@ -8,6 +8,7 @@ input EXEC2,
 input EQ,
 input MI,
 input GE,
+input uart,
 output EXTRA,
 output WRen,
 output sel1,
@@ -40,7 +41,7 @@ assign JGE= op[3] & !op[2] &  op[1] &  op[0];
 
 assign EXTRA= LDA | ADD | SUB;
 assign sel1=~(EXEC1&(LDA|STA|ADD|SUB));
-assign WRen=STA & EXEC1;
+assign WRen=(STA & EXEC1) | uart ;
 assign sel3=(ADD & EXEC2) | (SUB & EXEC2);
 assign PC_sload=(JMP & EXEC1) | (JMI & EXEC1 & MI ) | (JEQ & EXEC1 & EQ) | (JGE & EXEC1 & GE);
 assign cnt_en=EXEC1 & ( LDA | STA | ADD | SUB | (JMI & !MI) | (JEQ & !EQ) | (JGE & !GE) | LSR | LSL | LDI);

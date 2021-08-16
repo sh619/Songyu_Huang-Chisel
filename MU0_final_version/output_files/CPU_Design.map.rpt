@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CPU_Design
-Fri Aug 13 00:45:39 2021
+Mon Aug 16 15:28:13 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -59,7 +59,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Aug 13 00:45:39 2021           ;
+; Analysis & Synthesis Status        ; Successful - Mon Aug 16 15:28:13 2021           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; CPU_Design                                      ;
 ; Top-level Entity Name              ; CPU_Design                                      ;
@@ -179,57 +179,57 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                  ;
-+----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                    ; Library ;
-+----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------------+---------+
-; CPU_RAM.v                        ; yes             ; User Wizard-Generated File             ; C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/CPU_RAM.v              ;         ;
-; CPU_Design.bdf                   ; yes             ; User Block Diagram/Schematic File      ; C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/CPU_Design.bdf         ;         ;
-; statemachine.v                   ; yes             ; User Verilog HDL File                  ; C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/statemachine.v         ;         ;
-; registerx3.bdf                   ; yes             ; User Block Diagram/Schematic File      ; C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/registerx3.bdf         ;         ;
-; Decoder.v                        ; yes             ; User Verilog HDL File                  ; C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/Decoder.v              ;         ;
-; compare.v                        ; yes             ; User Verilog HDL File                  ; C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/compare.v              ;         ;
-; LDI_select.v                     ; yes             ; User Verilog HDL File                  ; C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/LDI_select.v           ;         ;
-; scan_led_hex_disp.v              ; yes             ; User Verilog HDL File                  ; C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/scan_led_hex_disp.v    ;         ;
-; clktick.v                        ; yes             ; User Verilog HDL File                  ; C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/clktick.v              ;         ;
-; bin2bcd.v                        ; yes             ; User Verilog HDL File                  ; C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/bin2bcd.v              ;         ;
-; lpm_shiftreg.tdf                 ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_shiftreg.tdf                              ;         ;
-; lpm_constant.inc                 ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_constant.inc                              ;         ;
-; dffeea.inc                       ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/dffeea.inc                                    ;         ;
-; aglobal181.inc                   ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/aglobal181.inc                                ;         ;
-; lpm_constant.tdf                 ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_constant.tdf                              ;         ;
-; busmux.tdf                       ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/busmux.tdf                                    ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_mux.inc                                   ;         ;
-; lpm_mux.tdf                      ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_mux.tdf                                   ;         ;
-; muxlut.inc                       ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/muxlut.inc                                    ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/bypassff.inc                                  ;         ;
-; altshift.inc                     ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altshift.inc                                  ;         ;
-; db/mux_msc.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/db/mux_msc.tdf         ;         ;
-; lpm_ff.tdf                       ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_ff.tdf                                    ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altsyncram.tdf                                ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc                         ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_decode.inc                                ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                                 ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altrom.inc                                    ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altram.inc                                    ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altdpram.inc                                  ;         ;
-; db/altsyncram_fti1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/db/altsyncram_fti1.tdf ;         ;
-; testcontrol.mif                  ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/testcontrol.mif        ;         ;
-; db/mux_isc.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/db/mux_isc.tdf         ;         ;
-; lpm_counter.tdf                  ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_counter.tdf                               ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc                               ;         ;
-; cmpconst.inc                     ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/cmpconst.inc                                  ;         ;
-; lpm_compare.inc                  ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_compare.inc                               ;         ;
-; lpm_counter.inc                  ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_counter.inc                               ;         ;
-; alt_counter_stratix.inc          ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/alt_counter_stratix.inc                       ;         ;
-; db/cntr_7nh.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/db/cntr_7nh.tdf        ;         ;
-; lpm_add_sub.tdf                  ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf                               ;         ;
-; addcore.inc                      ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/addcore.inc                                   ;         ;
-; look_add.inc                     ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/look_add.inc                                  ;         ;
-; alt_stratix_add_sub.inc          ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                       ;         ;
-; db/add_sub_8gd.tdf               ; yes             ; Auto-Generated Megafunction            ; C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/db/add_sub_8gd.tdf     ;         ;
-+----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                        ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                                          ; Library ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+---------+
+; CPU_RAM.v                        ; yes             ; User Wizard-Generated File             ; C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/CPU_RAM.v              ;         ;
+; CPU_Design.bdf                   ; yes             ; User Block Diagram/Schematic File      ; C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/CPU_Design.bdf         ;         ;
+; statemachine.v                   ; yes             ; User Verilog HDL File                  ; C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/statemachine.v         ;         ;
+; registerx3.bdf                   ; yes             ; User Block Diagram/Schematic File      ; C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/registerx3.bdf         ;         ;
+; Decoder.v                        ; yes             ; User Verilog HDL File                  ; C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/Decoder.v              ;         ;
+; compare.v                        ; yes             ; User Verilog HDL File                  ; C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/compare.v              ;         ;
+; LDI_select.v                     ; yes             ; User Verilog HDL File                  ; C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/LDI_select.v           ;         ;
+; scan_led_hex_disp.v              ; yes             ; User Verilog HDL File                  ; C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/scan_led_hex_disp.v    ;         ;
+; clktick.v                        ; yes             ; User Verilog HDL File                  ; C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/clktick.v              ;         ;
+; bin2bcd.v                        ; yes             ; User Verilog HDL File                  ; C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/bin2bcd.v              ;         ;
+; lpm_shiftreg.tdf                 ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_shiftreg.tdf                                                                    ;         ;
+; lpm_constant.inc                 ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_constant.inc                                                                    ;         ;
+; dffeea.inc                       ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/dffeea.inc                                                                          ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/aglobal181.inc                                                                      ;         ;
+; lpm_constant.tdf                 ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_constant.tdf                                                                    ;         ;
+; busmux.tdf                       ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/busmux.tdf                                                                          ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_mux.inc                                                                         ;         ;
+; lpm_mux.tdf                      ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_mux.tdf                                                                         ;         ;
+; muxlut.inc                       ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/muxlut.inc                                                                          ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/bypassff.inc                                                                        ;         ;
+; altshift.inc                     ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altshift.inc                                                                        ;         ;
+; db/mux_msc.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/db/mux_msc.tdf         ;         ;
+; lpm_ff.tdf                       ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_ff.tdf                                                                          ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altsyncram.tdf                                                                      ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                               ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_decode.inc                                                                      ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                                       ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altrom.inc                                                                          ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altram.inc                                                                          ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altdpram.inc                                                                        ;         ;
+; db/altsyncram_fti1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/db/altsyncram_fti1.tdf ;         ;
+; testcontrol.mif                  ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/testcontrol.mif        ;         ;
+; db/mux_isc.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/db/mux_isc.tdf         ;         ;
+; lpm_counter.tdf                  ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_counter.tdf                                                                     ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                                                     ;         ;
+; cmpconst.inc                     ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/cmpconst.inc                                                                        ;         ;
+; lpm_compare.inc                  ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_compare.inc                                                                     ;         ;
+; lpm_counter.inc                  ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_counter.inc                                                                     ;         ;
+; alt_counter_stratix.inc          ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/alt_counter_stratix.inc                                                             ;         ;
+; db/cntr_7nh.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/db/cntr_7nh.tdf        ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf                                                                     ;         ;
+; addcore.inc                      ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/addcore.inc                                                                         ;         ;
+; look_add.inc                     ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/look_add.inc                                                                        ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                           ; c:/intelfpga/18.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                                                             ;         ;
+; db/add_sub_8gd.tdf               ; yes             ; Auto-Generated Megafunction            ; C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/db/add_sub_8gd.tdf     ;         ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +-------------------------------------------------------------------+
@@ -274,7 +274,7 @@ refer to the applicable agreement for further details.
 ;    |CPU_RAM:RAM|                          ; 0 (0)               ; 0 (0)                     ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU_Design|CPU_RAM:RAM                                                                ; CPU_RAM           ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU_Design|CPU_RAM:RAM|altsyncram:altsyncram_component                                ; altsyncram        ; work         ;
 ;          |altsyncram_fti1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU_Design|CPU_RAM:RAM|altsyncram:altsyncram_component|altsyncram_fti1:auto_generated ; altsyncram_fti1   ; work         ;
-;    |Decoder:inst7|                        ; 15 (15)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU_Design|Decoder:inst7                                                              ; Decoder           ; work         ;
+;    |Decoder:inst10|                       ; 15 (15)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU_Design|Decoder:inst10                                                             ; Decoder           ; work         ;
 ;    |bin2bcd:inst19|                       ; 123 (123)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU_Design|bin2bcd:inst19                                                             ; bin2bcd           ; work         ;
 ;    |busmux:MUX1|                          ; 12 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU_Design|busmux:MUX1                                                                ; busmux            ; work         ;
 ;       |lpm_mux:$00000|                    ; 12 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CPU_Design|busmux:MUX1|lpm_mux:$00000                                                 ; lpm_mux           ; work         ;
@@ -643,43 +643,49 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Fri Aug 13 00:45:18 2021
+    Info: Processing started: Mon Aug 16 15:27:50 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPU_Design -c CPU_Design
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file cpu_ram.v
-    Info (12023): Found entity 1: CPU_RAM File: C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/CPU_RAM.v Line: 39
+    Info (12023): Found entity 1: CPU_RAM File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/CPU_RAM.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file cpu_design.bdf
     Info (12023): Found entity 1: CPU_Design
 Info (12021): Found 1 design units, including 1 entities, in source file statemachine.v
-    Info (12023): Found entity 1: statemachine File: C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/statemachine.v Line: 1
+    Info (12023): Found entity 1: statemachine File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/statemachine.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file registerx3.bdf
     Info (12023): Found entity 1: registerx3
 Info (12021): Found 1 design units, including 1 entities, in source file decoder.v
-    Info (12023): Found entity 1: Decoder File: C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/Decoder.v Line: 1
+    Info (12023): Found entity 1: Decoder File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/Decoder.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file compare.v
-    Info (12023): Found entity 1: compare File: C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/compare.v Line: 1
+    Info (12023): Found entity 1: compare File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/compare.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file ldi_select.v
-    Info (12023): Found entity 1: LDI_select File: C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/LDI_select.v Line: 1
+    Info (12023): Found entity 1: LDI_select File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/LDI_select.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file scan_led_hex_disp.v
-    Info (12023): Found entity 1: scan_led_hex_disp File: C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/scan_led_hex_disp.v Line: 2
+    Info (12023): Found entity 1: scan_led_hex_disp File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/scan_led_hex_disp.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file clktick.v
-    Info (12023): Found entity 1: clktick File: C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/clktick.v Line: 1
+    Info (12023): Found entity 1: clktick File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/clktick.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file fifo_add.v
-    Info (12023): Found entity 1: fifo_add File: C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/fifo_add.v Line: 39
+    Info (12023): Found entity 1: fifo_add File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/fifo_add.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file bin2bcd.v
-    Info (12023): Found entity 1: bin2bcd File: C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/bin2bcd.v Line: 14
+    Info (12023): Found entity 1: bin2bcd File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/bin2bcd.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file uart_tx.v
+    Info (12023): Found entity 1: uart_tx File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/uart_tx.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file uart_rx.v
+    Info (12023): Found entity 1: uart_rx File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/uart_rx.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file extension.v
+    Info (12023): Found entity 1: extension File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/extension.v Line: 1
 Info (12127): Elaborating entity "CPU_Design" for the top level hierarchy
 Info (12128): Elaborating entity "scan_led_hex_disp" for hierarchy "scan_led_hex_disp:inst2"
-Warning (10230): Verilog HDL assignment warning at scan_led_hex_disp.v(22): truncated value with size 32 to match size of target (18) File: C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/scan_led_hex_disp.v Line: 22
+Warning (10230): Verilog HDL assignment warning at scan_led_hex_disp.v(22): truncated value with size 32 to match size of target (18) File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/scan_led_hex_disp.v Line: 22
 Info (12128): Elaborating entity "bin2bcd" for hierarchy "bin2bcd:inst19"
 Info (12128): Elaborating entity "LPM_SHIFTREG" for hierarchy "LPM_SHIFTREG:acc"
 Info (12130): Elaborated megafunction instantiation "LPM_SHIFTREG:acc"
 Info (12133): Instantiated megafunction "LPM_SHIFTREG:acc" with the following parameter:
     Info (12134): Parameter "LPM_DIRECTION" = "RIGHT"
     Info (12134): Parameter "LPM_WIDTH" = "16"
-Info (12128): Elaborating entity "Decoder" for hierarchy "Decoder:inst7"
-Warning (10036): Verilog HDL or VHDL warning at Decoder.v(25): object "STP" assigned a value but never read File: C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/Decoder.v Line: 25
+Info (12128): Elaborating entity "Decoder" for hierarchy "Decoder:inst10"
+Warning (10036): Verilog HDL or VHDL warning at Decoder.v(26): object "STP" assigned a value but never read File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/Decoder.v Line: 26
 Info (12128): Elaborating entity "statemachine" for hierarchy "statemachine:statemachine"
 Info (12128): Elaborating entity "registerx3" for hierarchy "registerx3:inst"
 Info (12128): Elaborating entity "clktick" for hierarchy "clktick:inst14"
@@ -701,16 +707,16 @@ Info (12133): Instantiated megafunction "BUSMUX:MUX2" with the following paramet
 Info (12128): Elaborating entity "lpm_mux" for hierarchy "BUSMUX:MUX2|lpm_mux:$00000" File: c:/intelfpga/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
 Info (12131): Elaborated megafunction instantiation "BUSMUX:MUX2|lpm_mux:$00000", which is child of megafunction instantiation "BUSMUX:MUX2" File: c:/intelfpga/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_msc.tdf
-    Info (12023): Found entity 1: mux_msc File: C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/db/mux_msc.tdf Line: 22
+    Info (12023): Found entity 1: mux_msc File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/db/mux_msc.tdf Line: 22
 Info (12128): Elaborating entity "mux_msc" for hierarchy "BUSMUX:MUX2|lpm_mux:$00000|mux_msc:auto_generated" File: c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 86
 Info (12128): Elaborating entity "LPM_FF" for hierarchy "LPM_FF:IR1"
 Info (12130): Elaborated megafunction instantiation "LPM_FF:IR1"
 Info (12133): Instantiated megafunction "LPM_FF:IR1" with the following parameter:
     Info (12134): Parameter "LPM_WIDTH" = "16"
 Info (12128): Elaborating entity "CPU_RAM" for hierarchy "CPU_RAM:RAM"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "CPU_RAM:RAM|altsyncram:altsyncram_component" File: C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/CPU_RAM.v Line: 85
-Info (12130): Elaborated megafunction instantiation "CPU_RAM:RAM|altsyncram:altsyncram_component" File: C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/CPU_RAM.v Line: 85
-Info (12133): Instantiated megafunction "CPU_RAM:RAM|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/CPU_RAM.v Line: 85
+Info (12128): Elaborating entity "altsyncram" for hierarchy "CPU_RAM:RAM|altsyncram:altsyncram_component" File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/CPU_RAM.v Line: 85
+Info (12130): Elaborated megafunction instantiation "CPU_RAM:RAM|altsyncram:altsyncram_component" File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/CPU_RAM.v Line: 85
+Info (12133): Instantiated megafunction "CPU_RAM:RAM|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/CPU_RAM.v Line: 85
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "init_file" = "testcontrol.mif"
@@ -727,7 +733,7 @@ Info (12133): Instantiated megafunction "CPU_RAM:RAM|altsyncram:altsyncram_compo
     Info (12134): Parameter "width_a" = "16"
     Info (12134): Parameter "width_byteena_a" = "1"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_fti1.tdf
-    Info (12023): Found entity 1: altsyncram_fti1 File: C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/db/altsyncram_fti1.tdf Line: 27
+    Info (12023): Found entity 1: altsyncram_fti1 File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/db/altsyncram_fti1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_fti1" for hierarchy "CPU_RAM:RAM|altsyncram:altsyncram_component|altsyncram_fti1:auto_generated" File: c:/intelfpga/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12128): Elaborating entity "BUSMUX" for hierarchy "BUSMUX:MUX1"
 Info (12130): Elaborated megafunction instantiation "BUSMUX:MUX1"
@@ -736,14 +742,14 @@ Info (12133): Instantiated megafunction "BUSMUX:MUX1" with the following paramet
 Info (12128): Elaborating entity "lpm_mux" for hierarchy "BUSMUX:MUX1|lpm_mux:$00000" File: c:/intelfpga/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
 Info (12131): Elaborated megafunction instantiation "BUSMUX:MUX1|lpm_mux:$00000", which is child of megafunction instantiation "BUSMUX:MUX1" File: c:/intelfpga/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_isc.tdf
-    Info (12023): Found entity 1: mux_isc File: C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/db/mux_isc.tdf Line: 22
+    Info (12023): Found entity 1: mux_isc File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/db/mux_isc.tdf Line: 22
 Info (12128): Elaborating entity "mux_isc" for hierarchy "BUSMUX:MUX1|lpm_mux:$00000|mux_isc:auto_generated" File: c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 86
 Info (12128): Elaborating entity "LPM_COUNTER" for hierarchy "LPM_COUNTER:PC"
 Info (12130): Elaborated megafunction instantiation "LPM_COUNTER:PC"
 Info (12133): Instantiated megafunction "LPM_COUNTER:PC" with the following parameter:
     Info (12134): Parameter "LPM_WIDTH" = "12"
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_7nh.tdf
-    Info (12023): Found entity 1: cntr_7nh File: C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/db/cntr_7nh.tdf Line: 25
+    Info (12023): Found entity 1: cntr_7nh File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/db/cntr_7nh.tdf Line: 25
 Info (12128): Elaborating entity "cntr_7nh" for hierarchy "LPM_COUNTER:PC|cntr_7nh:auto_generated" File: c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 258
 Info (12128): Elaborating entity "LDI_select" for hierarchy "LDI_select:inst12"
 Info (12128): Elaborating entity "LPM_ADD_SUB" for hierarchy "LPM_ADD_SUB:ALU"
@@ -752,7 +758,7 @@ Info (12133): Instantiated megafunction "LPM_ADD_SUB:ALU" with the following par
     Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
     Info (12134): Parameter "LPM_WIDTH" = "16"
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8gd.tdf
-    Info (12023): Found entity 1: add_sub_8gd File: C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/db/add_sub_8gd.tdf Line: 22
+    Info (12023): Found entity 1: add_sub_8gd File: C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/db/add_sub_8gd.tdf Line: 22
 Info (12128): Elaborating entity "add_sub_8gd" for hierarchy "LPM_ADD_SUB:ALU|add_sub_8gd:auto_generated" File: c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf Line: 118
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -763,9 +769,9 @@ Info (21057): Implemented 397 device resources after synthesis - the final resou
     Info (21061): Implemented 368 logic cells
     Info (21064): Implemented 16 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4787 megabytes
-    Info: Processing ended: Fri Aug 13 00:45:39 2021
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:35
+    Info: Peak virtual memory: 4783 megabytes
+    Info: Processing ended: Mon Aug 16 15:28:13 2021
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:34
 
 

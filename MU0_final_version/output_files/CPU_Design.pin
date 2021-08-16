@@ -292,7 +292,7 @@ VCCIO4                       : P13       : power  :                   : 3.3V    
 sseg[5]                      : P14       : output : 3.3-V LVTTL       :         : 4         : Y              
 RESERVED_INPUT               : P15       :        :                   :         : 5         :                
 RESERVED_INPUT               : P16       :        :                   :         : 5         :                
-RESERVED_INPUT               : R1        :        :                   :         : 2         :                
+uart_rx                      : R1        : input  : 3.3-V LVTTL       :         : 2         : Y              
 GND                          : R2        : gnd    :                   :         :           :                
 RESERVED_INPUT               : R3        :        :                   :         : 3         :                
 RESERVED_INPUT               : R4        :        :                   :         : 3         :                

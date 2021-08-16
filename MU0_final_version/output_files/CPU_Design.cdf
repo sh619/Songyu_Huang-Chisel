@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10CL016Y) Path("C:/Users/huang/OneDrive - Imperial College London/DECA/MU0_final_version/output_files/") File("output_file.jic") MfrSpec(OpMask(1) SEC_Device(EPCS64) Child_OpMask(1 1));
+		Device PartName(10CL016YU256) Path("C:/Users/huang/OneDrive - Imperial College London/Chisel_project/Project/Songyu_Huang-Chisel/MU0_final_version/output_files/") File("CPU_Design.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
