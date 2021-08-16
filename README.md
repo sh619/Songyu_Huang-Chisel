@@ -1,9 +1,9 @@
 # Chisel Project 
 This project is for myself to learn Chisel language and hopefully finish some solid CPU design on FPGA.  
 
-## Implement MU0 CPU using Chisel
+## Set up MU0 CPU 
 ### Initial reaserch and FPGA set up:  
-I have already implemented this CPU on Quartus last year using block digram design, therefore to implmented again using Chisel will be a excellent way to start the tutorial.  
+I have already implemented this CPU on Quartus last year using quartus block digram design, therefore to implmented again using Chisel will be a excellent way to start leanring chisel.  
 First need to make sure that the design can run on Cyclone10 FPGA successfully. I am using Cyclone10 for the project.  
 In order to run the MU0 design on FPGA, I need to change the current Quartus file to the suitable version to make sure the designed CPU can run on Cyclone10 FPGA. When trying to connect the FPGA to Quartus vis USB blaster, Quartus cannot recognize the FPGA board. After searching online, I found out that this maybe caused by other USB devices connected to the PC(from Intel community).![image](https://user-images.githubusercontent.com/59866887/124550922-ff393580-de63-11eb-8a4a-ea62713121fc.png) This problem cause a lot of time to find the problem and fix, which makes the project slightly behind the scheduled time.  
 
@@ -14,9 +14,258 @@ In order to run the MU0 design on FPGA, I need to change the current Quartus fil
 - With the following instructions:
 ![image](https://user-images.githubusercontent.com/59866887/126984500-08d65ecf-f881-4501-a19f-6d56afabd827.png)
 
-### Sending instructions from PC to FPGA
+### Sending instructions from PC to FPGA(UART)
+I am using UART to communicate between the FPGA and the PC, as UART is one of the simplest method to use. ![image](https://user-images.githubusercontent.com/59866887/129524898-c48aa4fe-4ca1-4362-a60c-1aa0ffd59171.png) Using the serial port on the FPGA, I can send instruction from PC to FPGA.
+The verilog code for transmitter are shown below:
+```
+//串口助手设置:波特率9600 无奇偶校验位，8位数据位，一个停止位
+//time:2019.11.13.22.41
+module uart_tx(
+ input            clk    ,
+ input            rst_n  ,
+ output   reg     uart_tx,
+ input    [7:0]   data,
+ input            tx_start
+ );
+ 
+ 
+parameter   CLK_FREQ = 50000000;                 
+parameter   UART_BPS = 9600;     //波特率                 
+localparam  PERIOD   = CLK_FREQ/UART_BPS;  
+ 
+reg [7:0] tx_data;        //发送的数据
+reg start_tx_flag;        //发送数据标志位
+ 
+//记算一位数据需要多长时间PERIOD
+reg   [15:0]   cnt0;
+wire           add_cnt0;
+wire           end_cnt0;
+ 
+//发送几个数据
+reg   [3:0]    cnt1;
+wire           add_cnt1;
+wire           end_cnt1;
+ 
+ 
+ //发送标志位
+ always  @(posedge clk or negedge rst_n)begin
+    if(rst_n==1'b0)begin
+        start_tx_flag<=0;
+		  tx_data<=0;
+    end
+    else if(tx_start) begin
+        start_tx_flag<=1;    
+		  tx_data<=data;      //把发送的数据存到这里来
+		  
+    end
+    else if(end_cnt1) begin
+        start_tx_flag<=0;
+    end
+end
+ 
+always @(posedge clk or negedge rst_n)begin
+    if(!rst_n)begin
+        cnt0 <= 0;
+    end
+	 else if(end_cnt1) begin
+	     cnt0 <= 0;
+	 end
+	 else if(end_cnt0) begin
+	     cnt0 <= 0;
+	 end
+    else if(add_cnt0)begin
+        cnt0 <= cnt0 + 1;
+    end
+end
+assign add_cnt0 = start_tx_flag;       
+assign end_cnt0 = add_cnt0 && cnt0==PERIOD-1;   //一位时间
+ 
+always @(posedge clk or negedge rst_n)begin
+    if(!rst_n)begin
+        cnt1 <= 0;
+    end
+	 else if(end_cnt1) begin
+	     cnt1 <= 0;
+	 end
+    else if(add_cnt1)begin
+        cnt1 <= cnt1 + 1;
+    end
+end
+ 
+assign add_cnt1 = end_cnt0 ;    
+assign end_cnt1 = (cnt0==((PERIOD-1)/2))&& (cnt1==10-1);   //发送10位，包括停止位，空闲位
+ 
+always  @(posedge clk or negedge rst_n)begin
+      if(rst_n==1'b0)begin
+         uart_tx<=1;               //空闲状态
+      end
+      else if(start_tx_flag) begin
+		  if(cnt0==0)begin
+           case(cnt1)
+            4'd0:uart_tx<=0;         //起始位      
+            4'd1:uart_tx<=tx_data[0]; 
+				4'd2:uart_tx<=tx_data[1]; 
+            4'd3:uart_tx<=tx_data[2];
+            4'd4:uart_tx<=tx_data[3];
+            4'd5:uart_tx<=tx_data[4];
+            4'd6:uart_tx<=tx_data[5];
+            4'd7:uart_tx<=tx_data[6];
+            4'd8:uart_tx<=tx_data[7];
+            4'd9:uart_tx<=1;       //停止位  
+				default:;   
+          endcase
+        end  
+      end 
+end
+endmodule
+```
+The verilog code for receiver are shown below:
+```
+//串口助手设置:波特率9600 无奇偶校验位，8位数据位，一个停止位
+//time:2019.11.13.22.41
+module uart_rx(
+ input            clk    ,
+ input            rst_n  ,
+ input            uart_rx,
+ output reg       uart_rx_done,
+ output reg	[7:0] data
+ );
+ 
+   
+parameter  CLK_FREQ = 50000000;                 
+parameter  UART_BPS = 9600;      //波特率                
+localparam PERIOD   = CLK_FREQ/UART_BPS;        
+                                              
+ 
+//接收的数据
+reg [7:0] rx_data; 
+ 
+ 
+reg       rx1,rx2;
+wire      start_bit;
+reg       start_flag;
+ 
+ reg   [15:0]   cnt0;
+ wire           add_cnt0;
+ wire           end_cnt0;
+ 
+ reg   [3:0]    cnt1;
+ wire           add_cnt1;
+ wire           end_cnt1;
+ 
+ 
+ //下降沿检测 
+assign  start_bit=(rx2)&(~rx1);
+always  @(posedge clk or negedge rst_n)begin
+    if(rst_n==1'b0)begin
+         rx1<=1'b0;
+         rx2<=1'b0; 
+    end
+    else begin
+         rx1<=uart_rx;
+         rx2<=rx1;
+    end
+end
+//开始标志位
+always  @(posedge clk or negedge rst_n)begin
+    if(rst_n==1'b0)begin
+        start_flag<=0;
+    end
+    else if(start_bit) begin
+        start_flag<=1;
+    end
+    else if(end_cnt1) begin
+        start_flag<=0;
+    end
+end
+ 
+always @(posedge clk or negedge rst_n)begin
+    if(!rst_n)begin
+        cnt0 <= 0;
+    end
+	 else if(end_cnt1) begin
+	     cnt0 <= 0;
+	 end
+	 else if(end_cnt0) begin
+	     cnt0 <= 0;
+	 end
+    else if(add_cnt0)begin
+        cnt0 <= cnt0 + 1;
+    end
+end
+assign add_cnt0 = start_flag;       
+assign end_cnt0 = add_cnt0 && cnt0==PERIOD-1;
+ 
+ 
+always @(posedge clk or negedge rst_n)begin
+    if(!rst_n)begin
+        cnt1 <= 0;
+    end
+	 else if(end_cnt1) begin
+	     cnt1 <= 0;
+	 end
+    else if(add_cnt1)begin
+        cnt1 <= cnt1 + 1;
+    end
+end
+ 
+assign add_cnt1 = end_cnt0 ;    
+assign end_cnt1 = (cnt0==((PERIOD-1)/2))&& (cnt1==10-1) ;  
+ 
+//数据接收
+always  @(posedge clk or negedge rst_n)begin
+      if(rst_n==1'b0)begin
+         rx_data<=8'd0;
+      end
+      else if(start_flag) begin
+		  if(cnt0== PERIOD/2)begin
+           case(cnt1)
+            4'd1:rx_data[0]<=rx2;
+            4'd2:rx_data[1]<=rx2;
+            4'd3:rx_data[2]<=rx2;
+            4'd4:rx_data[3]<=rx2;
+            4'd5:rx_data[4]<=rx2;
+            4'd6:rx_data[5]<=rx2;
+            4'd7:rx_data[6]<=rx2;
+            4'd8:rx_data[7]<=rx2;
+		    default:rx_data<=rx_data;   
+          endcase
+        end
+        else begin
+            rx_data<=rx_data;
+        end
+     end
+     else begin
+         rx_data<=8'd0;
+     end   
+  end 
+  //数据接收
+ always  @(posedge clk or negedge rst_n)begin
+      if(rst_n==1'b0)begin
+           data<=0;
+      end
+      else if(end_cnt1)begin
+          data<=rx_data;
+      end  
+  end
+  
+  //接收完成标志
+ always  @(posedge clk or negedge rst_n)begin
+     if(rst_n==1'b0)begin
+         uart_rx_done<=0;
+     end
+     else if(end_cnt1)begin
+         uart_rx_done<=1;
+     end
+     else begin
+        uart_rx_done<=0;
+     end
+ end
+endmodule
+```
 
 ### Implement MU0 using Chisel:
+After finishing the steps above, I can now start implementing the CPU using chisel.
 #### Chisel Environment set up:
 The chisel enviroment set up was finished based on the tutorial https://blog.csdn.net/qq_34291505/article/details/86744581, this is a detailed tutorial starts from learning scala to familiarize Chisel3. I am using Ubuntu 18.04.
 The following reports should appear after running "sbt test"  
