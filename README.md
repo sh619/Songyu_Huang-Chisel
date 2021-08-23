@@ -499,20 +499,7 @@ class CPU extends Module {
     Compare.io.acc_out := acc.io.acc_out
 }
 ```
-I am trying to compile this top level module, however, I keep getting this error message which contains **no error description** and also returns success, firrtl file is generated but verilog can not be generated. Has anyone had this issue before?
-```
-[info] welcome to sbt 1.4.9 (Private Build Java 1.8.0_292)
-[info] loading settings for project chisel-template-build from plugins.sbt ...
-[info] loading project definition from /home/songyu/Documents/Chisel_project/Songyu_Huang-Chisel/Chisel_MU0/chisel-template/project
-[info] loading settings for project root from build.sbt ...
-[info] set current project to %NAME% (in build file:/home/songyu/Documents/Chisel_project/Songyu_Huang-Chisel/Chisel_MU0/chisel-template/)
-[warn] multiple main classes detected: run 'show discoveredMainClasses' to see the list
-[info] running test.CPU_GEN -td ./generated/CPU
-Elaborating design...
-Done elaborating.
-[error]         at 
-[success] Total time: 4 s, completed Jul 26, 2021 7:35:52 PM
-```
+After adding all the generated verilog from Chisel to quartus and running on the FPGA, the CPU works fine.
 
 
 
