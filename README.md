@@ -13,7 +13,84 @@ In order to run the MU0 design on FPGA, I need to change the current Quartus fil
 ![image](https://user-images.githubusercontent.com/59866887/126939010-83d284b1-9fda-4c96-a3f3-74bcb8cad541.png)
 - With the following instructions:
 ![image](https://user-images.githubusercontent.com/59866887/126984500-08d65ecf-f881-4501-a19f-6d56afabd827.png)
+### The FPGA configuration are shown below:
+The new FPGA is STEP-CYC10:
+![image](https://user-images.githubusercontent.com/59866887/128619895-24151c0a-f2c8-47d0-a158-cb1a7c4828f0.png)
 
+### Display the output of the CPU on 7segment display
+The 7 segment display has different pin allocation, it has a digit pin and a segment pin. In order to make sure the four 7 segment displays can represent different digit of a hex number, the following code is used(it does not have 7 pins for each of the display, therefore, in order to make the display show different number at the same time, we need to make sure the 7segment display flash quick enough to "trick" our eyes.
+```
+`timescale 1ns / 1ps 
+module scan_led_hex_disp(
+    input clk,
+    input reset,
+    input [3:0] hex0,
+    input [3:0] hex1,
+    input [3:0] hex2,
+    input [3:0] hex3,
+    output reg [3:0] an,   //片选
+    output reg [6:0] sseg  //段选
+    );
+ // 四个数码管同时显示不同数据。
+ localparam N = 18; //使用低16位对50Mhz的时钟进行分频(50MHZ/2^16)
+ reg [N-1:0] regN; //高两位作为控制信号，低16位为计数器，对时钟进行分频
+ reg [3:0] hex_in; //段选控制信号
+ 
+ always@(posedge clk, posedge reset)
+ begin
+  if(reset)
+   regN <= 0;
+  else
+   regN <= regN + 1;
+ end
+ 
+ always@ *
+ begin
+  case(regN[N-1:N-2])
+  2'b00:begin
+   an = 4'b0001; //选中第1个数码管
+   hex_in = hex0; //数码管显示的数字由hex_in控制，显示hex0输入的数字；
+  end
+  2'b01:begin
+   an = 4'b0010; 
+   hex_in = hex1;
+  end
+  2'b10:begin
+   an = 4'b0100;
+   hex_in = hex2;
+  end
+  default:begin
+   an = 4'b1000;
+   hex_in = hex3;
+  end
+  
+  endcase
+ 
+ end
+ always@ *
+ begin
+  case(hex_in)
+      4'h0: sseg[6:0] = 7'b1000000;
+		4'h1: sseg[6:0] = 7'b1111001;
+		4'h2: sseg[6:0] = 7'b0100100;
+		4'h3: sseg[6:0] = 7'b0110000;
+		4'h4: sseg[6:0] = 7'b0011001;
+		4'h5: sseg[6:0] = 7'b0010010;
+		4'h6: sseg[6:0] = 7'b0000010;
+		4'h7: sseg[6:0] = 7'b1111000;
+		4'h8: sseg[6:0] = 7'b0000000;
+		4'h9: sseg[6:0] = 7'b0011000;
+		4'ha: sseg[6:0] = 7'b0001000;
+		4'hb: sseg[6:0] = 7'b0000011;
+		4'hc: sseg[6:0] = 7'b1000110;
+		4'hd: sseg[6:0] = 7'b0100001;
+		4'he: sseg[6:0] = 7'b0000110;
+		4'hf: sseg[6:0] = 7'b0001110;
+   default: sseg[6:0] = 7'b0111000;
+  endcase
+ end
+endmodule
+```
 ### Sending instructions from PC to FPGA(UART)
 I am using UART to communicate between the FPGA and the PC, as UART is one of the simplest method to use. ![image](https://user-images.githubusercontent.com/59866887/129524898-c48aa4fe-4ca1-4362-a60c-1aa0ffd59171.png) Using the serial port on the FPGA, I can send instruction from PC to FPGA.
 The verilog code for transmitter are shown below:
@@ -263,10 +340,25 @@ always  @(posedge clk or negedge rst_n)begin
  end
 endmodule
 ```
+### Set up I/O standards and Pin assignment
+The cyclone 10LP board needs a I/O standards of 3.3-V LVTTL. This can be set up on Quartus. Also, all unused pins needs to set up as input tri-stated.![image](https://user-images.githubusercontent.com/59866887/131060249-4e6299a8-cba1-4274-af7a-2780c1beb1ab.png)
+The output of the project are: the 4 digits 7segment display, a reset button(which is the switch, it can be used to reset all the modules), a 50Mhz clock signal and two UART RX,TX ports.
+I need to locate the pin using the table below:
+![image](https://user-images.githubusercontent.com/59866887/128619929-ee8a7338-f50d-4289-8308-eec31d217f48.png)
 
-### Implement MU0 using Chisel:
+### Store the project file inside the flash
+The sof file will dispear after powing off the FPGA(when it is being stored inside the SRAM). In order to make sure the FPGA contains the sof file after powing off, the sof file can be stored in the flash, therefore we need to onvert the SOF file into jic file, following the steps below.
+![image](https://user-images.githubusercontent.com/59866887/131063215-790ff2ca-0c9a-4476-bce9-f6528ea2494b.png)
+Choose the device to be EPCS64:
+![image](https://user-images.githubusercontent.com/59866887/131063321-4abe305b-d104-4a4e-bd99-02d8d9d29b68.png)
+Choose the correct sof file and the PFGA device
+![image](https://user-images.githubusercontent.com/59866887/131063862-9a430290-408e-4299-97db-55ae26f9102c.png)
+Finally open the programmer and upload the jic file to the FPGA flash:
+![image](https://user-images.githubusercontent.com/59866887/131063926-2c8f9064-45b0-42a0-a35c-baeeff6e5104.png)
+
+## Implement MU0 using Chisel:
 After finishing the steps above, I can now start implementing the CPU using chisel.
-#### Chisel Environment set up:
+### Chisel Environment set up:
 The chisel enviroment set up was finished based on the tutorial https://blog.csdn.net/qq_34291505/article/details/86744581, this is a detailed tutorial starts from learning scala to familiarize Chisel3. I am using Ubuntu 18.04.
 The following reports should appear after running "sbt test"  
 ```
@@ -285,15 +377,15 @@ Done elaborating.
 [success] Total time: 7 s, completed Jul 26, 2021 5:21:12 PM
 ```  
 This means that Chisel has set up successfully.
-##### Simulation and Generating Verilog
+#### Simulation and Generating Verilog
 I am using Vistual studio code as the text editor because it has Chisel syntax extention: 
 ![image](https://user-images.githubusercontent.com/59866887/126974995-2538c7c2-c795-4b60-9146-1230937c940c.png)  
 Inserting the generated verilog file to Quartus and run Modelsim testbench is a good way to debug on the design, this is faster than writting testbench and runs using Verilator in my opinion.
 
 
-#### Individual module construction of MU0 (not all the module is listed), all modules were tested using modelsim on Quartus
+### Individual module construction of MU0 (not all the module is listed), all modules were tested using modelsim on Quartus
 The block digram of the circuit is shown below
-##### Finite StateMachine
+#### Finite StateMachine
 ![image](https://user-images.githubusercontent.com/59866887/126973655-1616380d-b80b-4e8e-b173-004dac4a05f7.png)  
 Chisel support Enum function which can be used to generate state names and corresponding parameters. 'Switch' function also can be used
 ```
@@ -414,7 +506,7 @@ end // initial
 endmodule
 ```
 
-##### RAM
+#### RAM
 Chisel supports RAM configuration in the Chisel3.uitl package. This is a single port RAM.  
 We also need to initialize the memory of the RAM to insert the assemblly code.  
 > Chisel memories can be initialized from an external binary or hex file emitting proper Verilog for synthesis or simulation. There are multiple modes of initialization.  
@@ -443,7 +535,7 @@ class RAM extends Module {
     }
   } 
   ```
-  ##### Top level Module (based on the block diagram above) 
+  #### Top level Module (based on the block diagram above) 
   The top level module is used to connect ports between individual moodules. 
 ```
 class CPU extends Module {
