@@ -341,20 +341,29 @@ always  @(posedge clk or negedge rst_n)begin
 endmodule
 ```
 ### Set up I/O standards and Pin assignment
-The cyclone 10LP board needs a I/O standards of 3.3-V LVTTL. This can be set up on Quartus. Also, all unused pins needs to set up as input tri-stated.![image](https://user-images.githubusercontent.com/59866887/131060249-4e6299a8-cba1-4274-af7a-2780c1beb1ab.png)
+The cyclone 10LP board needs a I/O standards of 3.3-V LVTTL. This can be set up on Quartus. Also, all unused pins needs to set up as input tri-stated.
+
+<img src="https://user-images.githubusercontent.com/59866887/131060249-4e6299a8-cba1-4274-af7a-2780c1beb1ab.png" width = "60%" height = "60%" div align=centre />
 The output of the project are: the 4 digits 7segment display, a reset button(which is the switch, it can be used to reset all the modules), a 50Mhz clock signal and two UART RX,TX ports.
 I need to locate the pin using the table below:
-![image](https://user-images.githubusercontent.com/59866887/128619929-ee8a7338-f50d-4289-8308-eec31d217f48.png)
+
+<img src="https://user-images.githubusercontent.com/59866887/128619929-ee8a7338-f50d-4289-8308-eec31d217f48.png" width = "60%" height = "60%" div align=centre />
 
 ### Store the project file inside the flash
 The sof file will dispear after powing off the FPGA(when it is being stored inside the SRAM). In order to make sure the FPGA contains the sof file after powing off, the sof file can be stored in the flash, therefore we need to onvert the SOF file into jic file, following the steps below.
-![image](https://user-images.githubusercontent.com/59866887/131063215-790ff2ca-0c9a-4476-bce9-f6528ea2494b.png)
+
+<img src="https://user-images.githubusercontent.com/59866887/131063215-790ff2ca-0c9a-4476-bce9-f6528ea2494b.png" width = "60%" height = "60%" div align=centre />
 Choose the device to be EPCS64:
-![image](https://user-images.githubusercontent.com/59866887/131063321-4abe305b-d104-4a4e-bd99-02d8d9d29b68.png)
+
+<img src="https://user-images.githubusercontent.com/59866887/131063321-4abe305b-d104-4a4e-bd99-02d8d9d29b68.png" width = "60%" height = "60%" div align=centre />
+
 Choose the correct sof file and the PFGA device
-![image](https://user-images.githubusercontent.com/59866887/131063862-9a430290-408e-4299-97db-55ae26f9102c.png)
+
+<img src="https://user-images.githubusercontent.com/59866887/131063862-9a430290-408e-4299-97db-55ae26f9102c.png" width = "60%" height = "60%" div align=centre />
+
 Finally open the programmer and upload the jic file to the FPGA flash:
-![image](https://user-images.githubusercontent.com/59866887/131063926-2c8f9064-45b0-42a0-a35c-baeeff6e5104.png)
+
+<img src="https://user-images.githubusercontent.com/59866887/131063926-2c8f9064-45b0-42a0-a35c-baeeff6e5104.png" width = "60%" height = "60%" div align=centre />
 
 ## Implement MU0 using Chisel:
 After finishing the steps above, I can now start implementing the CPU using chisel.
