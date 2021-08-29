@@ -20,6 +20,58 @@ Below is the block diagram:
 ![image](https://user-images.githubusercontent.com/59866887/131238097-0ade1701-94de-4e01-9f4b-f82e45311ccd.png)
 
 ### Display the output of the CPU on 7segment display
+In order to display the output of the CPU, we first need to convert hex number into binary coded decimal, so that the 7segment display can show decimal number. The code is shown below:
+```
+//   Shift binary number x left by one bit into temporary register 'result'
+//   If bottom 4 bits of result  >= 5
+//		add 3 (only once)
+//   Continue shifting x into result until all bit in x have been processed
+
+
+module bin2bcd(x, BCD0, BCD1, BCD2, BCD3, BCD4);
+	input[15:0] x;			// value ot be converted
+	output reg[3:0] BCD0, BCD1, BCD2, BCD3, BCD4;  // BCD digits
+	
+	 // Concatenation of input and output
+   reg [35:0] result;  // no of bits = no_of_bit of x + 4* no of digits
+   integer i;
+   
+   always @(*)
+   begin
+      result[35:0] = 0;
+      result[15:0] = x;
+
+      for (i=0; i<16; i=i+1) begin
+			// Check if unit digit >= 5
+         if (result[19:16] >= 5)
+            result[19:16] = result[19:16] + 4'd3;
+				
+         // Check if ten digita >= 5
+         if (result[23:20] >= 5)
+            result[23:20] = result[23:20] + 4'd3;
+            
+			// CHeck if hundred digit >= 5
+         if (result[27:24] >= 5)
+            result[27:24] = result[27:24] + 4'd3;
+				
+			// check if thousand digit > 5
+         if (result[31:28] >= 5)
+            result[31:28] = result[31:28] + 4'd3;
+
+			// Shift everything left
+         result = result << 1;
+      end
+      
+      // Decode output from result
+      BCD0 = result[19:16];
+		BCD1 = result[23:20];		
+		BCD2 = result[27:24];
+		BCD3 = result[31:28];
+		BCD4 = result[35:32];
+   end
+	
+endmodule
+```
 The 7 segment display has different pin allocation, it has a digit pin and a segment pin. In order to make sure the four 7 segment displays can represent different digit of a hex number, the following code is used(it does not have 7 pins for each of the display, therefore, in order to make the display show different number at the same time, we need to make sure the 7segment display flash quick enough to "trick" our eyes.
 ```
 `timescale 1ns / 1ps 
