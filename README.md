@@ -349,6 +349,7 @@ I need to locate the pin using the table below:
 
 <img src="https://user-images.githubusercontent.com/59866887/128619929-ee8a7338-f50d-4289-8308-eec31d217f48.png" width = "60%" height = "60%" div align=centre />
 
+There are 15 output and input pins needs to be assgined: The uart recieve and transmit, 7 segment display pin and 4 digit select pin. Each pin should be located corresponding to the table above. 
 ### Store the project file inside the flash
 The sof file will dispear after powing off the FPGA(when it is being stored inside the SRAM). In order to make sure the FPGA contains the sof file after powing off, the sof file can be stored in the flash, therefore we need to onvert the SOF file into jic file, following the steps below.
 
