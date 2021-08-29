@@ -16,6 +16,8 @@ In order to run the MU0 design on FPGA, I need to change the current Quartus fil
 ### The FPGA configuration are shown below:
 The new FPGA is STEP-CYC10:
 ![image](https://user-images.githubusercontent.com/59866887/128619895-24151c0a-f2c8-47d0-a158-cb1a7c4828f0.png)
+Below is the block diagram:
+![image](https://user-images.githubusercontent.com/59866887/131238097-0ade1701-94de-4e01-9f4b-f82e45311ccd.png)
 
 ### Display the output of the CPU on 7segment display
 The 7 segment display has different pin allocation, it has a digit pin and a segment pin. In order to make sure the four 7 segment displays can represent different digit of a hex number, the following code is used(it does not have 7 pins for each of the display, therefore, in order to make the display show different number at the same time, we need to make sure the 7segment display flash quick enough to "trick" our eyes.
